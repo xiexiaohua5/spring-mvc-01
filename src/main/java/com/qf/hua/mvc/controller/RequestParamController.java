@@ -1,11 +1,11 @@
 package com.qf.hua.mvc.controller;
 
-import org.springframework.stereotype.Controller;
+import com.qf.hua.mvc.dto.UserRequestParam;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.transform.Source;
 
-@Controller
+@RequestMapping("/test")
+@RestController
 public class RequestParamController {
     //大型的项目
     //不一样的编程语言，当命名规则不一样时
@@ -37,21 +37,22 @@ public class RequestParamController {
      * 传递参数不要使用map 尽量是对象
      * @return
      */
-    @PostMapping("/t3")
+    @RequestMapping("/t3")
     @ResponseBody
-    public String test3(@RequestBody UserRequestParam param){
+    public String test3(UserRequestParam param){
         System.out.println(param.toString());
         return "RequestParam的注解的使用";
     }
 
     /**
-     *
+     *@RequestBody的作用其实是将json格式的数据转为java对象
      * @param param
      * @return
      */
-    @PostMapping("/t4")
+    @RequestMapping("/t4")
     @ResponseBody
     public String test4(@RequestBody UserRequestParam param){
+        System.out.println(param.toString());
         return "@RequestBody注解";
     }
 }

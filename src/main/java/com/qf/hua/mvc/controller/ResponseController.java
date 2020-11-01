@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ResponseController {
 
     /**
+     * @PathVariable是在mapping动态声明参数的时候使用
      * mapping 声明{变量}
      * 在参数中 使用@PathVariable注解，一般参数不能太多
      * 也可以使用?去传

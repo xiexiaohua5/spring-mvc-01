@@ -41,6 +41,7 @@
 
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
+    <!--springMVC的前端控制器配置为“/”时，需要在主配置文件中配置放行静态资源-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
